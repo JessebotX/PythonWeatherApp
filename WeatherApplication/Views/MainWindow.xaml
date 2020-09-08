@@ -12,6 +12,10 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom"> Bottom Button </Button>
+        <TextBlock DockPanel.Dock="Top" Text="Weather App" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </DockPanel>
 
 </Window>
