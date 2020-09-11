@@ -1,37 +1,72 @@
+from datetime import datetime
+
 class DataModel:
     def __init__(self):
+        self.city = "Surrey,CA"
         self.temp_k = None
-        self.temp_c = None
-        self.temp_f = None
+        self.weather_condition = None
+        self.weather_desc = None
+        self.timestamp = None
+        self.icon = None
 
     @property
-    def temp_k(self):
-        return self.temp_k
+    def area(self):
+        return self.city
+    
+    @area.setter
+    def area(self, value):
+        self.city = value
+    
+    @property
+    def kelvin(self):
+        return round(self.temp_k, 1)
 
-    @temp_k.setter
-    def temp_k(self, value):
-        self.temp_k = value
+    @kelvin.setter
+    def kelvin(self, value):
+        self.temp_k = round(value, 1)
+
+    # No setter needed for celsius
+    @property
+    def celsius(self):
+        return round(self.kelvin - 273.15, 1)
+    
+    # No setter needed for fahrenheit
+    @property
+    def fahrenheit(self):
+        return round((self.kelvin - 273.15) * 9/5 + 32, 1)
 
     @property
-    def temp_c(self):
-        return self.temp_c
+    def condition(self):
+        return self.weather_condition
 
-    @temp_c.setter
-    def temp_c(self, value):
-        self.temp_c = value
+    @condition.setter
+    def condition(self, value):
+        self.weather_condition = value
 
     @property
-    def temp_f(self):
-        return self.temp_f
+    def description(self):
+        return self.weather_desc.capitalize()
 
-    @temp_f.setter
-    def temp_f(self, value):
-        self.temp_f = value
-        
+    @description.setter
+    def description(self, value):
+        self.weather_desc = value
 
+    @property
+    def time(self):
+        return datetime.utcfromtimestamp(
+            self.timestamp
+        ).strftime(
+            "%Y-%m-%d %H:%M:%S UTC"
+        )
+    
+    @time.setter
+    def time(self, value):
+        self.timestamp = value
 
-def testing():
-    """
-    Test data model module
-    """
-    print("Hello World")
+    @property
+    def icon_id(self):
+        return self.icon
+    
+    @icon_id.setter
+    def icon_id(self, value):
+        self.icon = value

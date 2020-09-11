@@ -1,4 +1,5 @@
-private
+private.json
+weather.ico
 
 #####
 ### Below is the python .gitignore from github
