@@ -31,7 +31,7 @@ class Main(WeatherData):
 
         self.setState()
 
-    def setState(self, city="Surrey", country="CA", first_time = True):
+    def setState(self, city="Vancouver", country="CA", first_time = True):
         self.begin(city + "," + country)
 
         if not first_time:
