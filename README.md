@@ -5,7 +5,7 @@ Made with Python programming language and the built-in Tkinter library.
 
 ## Contents <!-- omit in toc -->
 - [Install](#install)
-    - [Windows](#windows)
+- [Usage](#usage)
 
 ## Install
 Clone this repository with [git](https://git-scm.com/)
