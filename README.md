@@ -1,7 +1,7 @@
 # JessebotX/Weather App <!-- omit in toc -->
-A GUI desktop application to check the current, daily and weekly weather forecast. 
+A GUI desktop application to check the current weather forecast.
 
-Made with Python programming language and the built-in Tkinter library
+Made with Python programming language and the built-in Tkinter library.
 
 ## Contents <!-- omit in toc -->
 - [Install](#install)
