@@ -5,15 +5,21 @@ import os
 from data_model import DataModel
 
 class WeatherData(DataModel):
-    def __init__(self):
+    def __init__(self, location):
         super().__init__()
+        self.begin(location)
+    
+    def begin(self, location):
         self.current = None
         self.currentReq = None
 
-        # set apikey to the read file
-        with open("src/private.json", "r") as config:
-            self.apikey = json.loads(config.read())
+        # set default
+        self.area = location
 
+        # set apikey to the read file
+        with open("private.json", "r") as config:
+            self.apikey = json.loads(config.read())
+        
         self.connect_api()
         self.set_data()
     
@@ -41,3 +47,4 @@ class WeatherData(DataModel):
         self.description = self.current["weather"][0]["description"]
         self.time = self.current["dt"]
         self.icon_id = self.current["weather"][0]["icon"]
+        self.area = self.current["name"] + ", " + self.current["sys"]["country"]

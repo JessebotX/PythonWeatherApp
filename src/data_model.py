@@ -2,7 +2,7 @@ from datetime import datetime
 
 class DataModel:
     def __init__(self):
-        self.city = "Surrey,CA"
+        self.city = None
         self.temp_k = None
         self.weather_condition = None
         self.weather_desc = None
